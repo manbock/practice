@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+*{font-size: 30px;}
+
+@keyframes anime {
+    0%{top:0; left: 50%;}
+
+    27%{top: 50%; left: 100%;
+        transform: translate(-100%,0); 
+        background-color: #f06767;
+    }
+    48%{top: 100%; left: 40%;
+        transform:translate(0,-100%);
+        background-color: #72f067;
+    }
+    78%{top: 30%; left: 0;
+        transform:translate(0,0);
+        background-color: #67a7f0;
+    }
+    100%{top: 0%; left: 40%;
+        transform:translate(0,0);
+        background-color: #b182f4;
+    }
+}
+
+
+
+
+#container{
+    width: 1000px; height: 1500px;
+    background-color: #303030;
+    border: 10px solid black;
+    margin: 0 auto;
+    position: relative;
+}
+
+#container::after{
+    content: ""; display: block; clear: both;
+}
+
+
+
+.box1{
+    position: relative;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background-color: #b182f4;
+    top: 0; left: 50%;
+    transform: translate(-50%,0);
+    
+}
+
+#button{ width: 300px; height: 150px; background-color: #faa338;
+     margin: auto; position: relative;
+}
+#button h1{position: absolute; left: 50%; top: 50%;;
+    transform: translate(-50%,-50%); ;
+}
+#button:hover~#container .box1{animation: anime 6s linear infinite;}
